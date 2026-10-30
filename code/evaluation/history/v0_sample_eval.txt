@@ -1,0 +1,53 @@
+cases=32  status_acc=0.969  step P/R/F1=0.926/0.907/0.916  sequence_acc=0.531
+field accuracy (positional): phase=0.954  system_id=0.913  resource_id=0.862  operation=0.913  state=0.913  evidence_id=0.938
+
+misses: 15
+- case_03: status gold=COMPLETE pred=COMPLETE
+    MISSING  ('VERIFICATION', 'analytics_platform', 'analytics_9406', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', 'evidence_94')
+    EXTRA    ('VERIFICATION', 'analytics_platform', 'analytics_5589', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', 'evidence_94')
+- case_04: status gold=COMPLETE pred=COMPLETE
+    MISSING  ('VERIFICATION', 'account_service', 'account_004', 'VERIFY_RECORD_ABSENT', 'ABSENT', 'evidence_54')
+- case_07: status gold=INCOMPLETE pred=COMPLETE
+    MISSING  ('FINDING', 'support_platform', 'support_001', 'REPORT_REMAINING_RECORD', 'PRESENT', 'evidence_58')
+    MISSING  ('REMEDIATION', 'support_platform', 'support_001', 'DELETE_RECORD', 'ABSENT', '')
+    MISSING  ('VERIFICATION', 'account_service', 'account_007', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+    MISSING  ('VERIFICATION', 'support_platform', 'support_001', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+    EXTRA    ('VERIFICATION', 'account_service', 'account_007', 'VERIFY_RECORD_ABSENT', 'ABSENT', 'evidence_54')
+- case_09: status gold=INCOMPLETE pred=INCOMPLETE
+    EXTRA    ('VERIFICATION', 'analytics_platform', 'analytics_5718', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', '')
+- case_10: status gold=INCOMPLETE pred=INCOMPLETE
+    MISSING  ('VERIFICATION', 'account_service', 'account_010', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+    EXTRA    ('VERIFICATION', 'account_service', 'account_3136', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+- case_18: status gold=INCOMPLETE pred=INCOMPLETE
+    MISSING  ('VERIFICATION', 'account_service', 'account_5521', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+    MISSING  ('VERIFICATION', 'security_service', 'audit_record_6645', 'VERIFY_RECORD_PRESENT', 'PRESENT', '')
+    EXTRA    ('VERIFICATION', 'account_service', 'account_5037', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+- case_20: status gold=INCOMPLETE pred=INCOMPLETE
+    MISSING  ('VERIFICATION', 'account_service', 'account_5037', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+    MISSING  ('VERIFICATION', 'security_service', 'audit_record_5569', 'VERIFY_RECORD_PRESENT', 'PRESENT', '')
+    EXTRA    ('VERIFICATION', 'account_service', 'account_5521', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+    EXTRA    ('VERIFICATION', 'analytics_platform', 'analytics_2265', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', '')
+- case_23: status gold=INCOMPLETE pred=INCOMPLETE
+    MISSING  ('VERIFICATION', 'account_service', 'account_410', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+    EXTRA    ('VERIFICATION', 'account_service', 'account_9155', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+- case_24: status gold=INCOMPLETE pred=INCOMPLETE
+    EXTRA    ('VERIFICATION', 'analytics_platform', 'analytics_4566', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', '')
+- case_25: status gold=COMPLETE pred=COMPLETE
+    MISSING  ('VERIFICATION', 'account_service', 'account_3136', 'VERIFY_RECORD_ABSENT', 'ABSENT', 'evidence_92')
+    EXTRA    ('VERIFICATION', 'account_service', 'account_7225', 'VERIFY_RECORD_ABSENT', 'ABSENT', 'evidence_54')
+- case_26: status gold=COMPLETE pred=COMPLETE
+    MISSING  ('VERIFICATION', 'analytics_platform', 'analytics_4566', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', 'evidence_92')
+- case_27: status gold=COMPLETE pred=COMPLETE
+    MISSING  ('VERIFICATION', 'analytics_platform', 'analytics_4574', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', 'evidence_92')
+    EXTRA    ('VERIFICATION', 'analytics_platform', 'analytics_6077', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', 'evidence_92')
+- case_28: status gold=COMPLETE pred=COMPLETE
+    MISSING  ('VERIFICATION', 'analytics_platform', 'analytics_6077', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', 'evidence_92')
+    EXTRA    ('VERIFICATION', 'analytics_platform', 'analytics_4574', 'VERIFY_RECORD_ANONYMIZED', 'ANONYMIZED', 'evidence_92')
+- case_31: status gold=COMPLETE pred=COMPLETE
+    MISSING  ('VERIFICATION', 'account_service', 'account_4857', 'VERIFY_RECORD_ABSENT', 'ABSENT', 'evidence_51')
+    EXTRA    ('VERIFICATION', 'account_service', 'account_8858', 'VERIFY_RECORD_ABSENT', 'ABSENT', 'evidence_54')
+- case_32: status gold=INCOMPLETE pred=INCOMPLETE
+    MISSING  ('VERIFICATION', 'account_service', 'account_8858', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+    EXTRA    ('VERIFICATION', 'account_service', 'account_4857', 'VERIFY_RECORD_ABSENT', 'ABSENT', '')
+
+contract check on predictions: valid

@@ -1,0 +1,60 @@
+case_id,reason
+case_03,analytics_5589 attributed by workflow timing; another case is equally close
+case_03,account_7566 attributed by workflow timing; another case is equally close
+case_07,object_19: evidence only from case_61's earlier episode; not re-reported
+case_09,analytics_5718 attributed by workflow timing; another case is equally close
+case_09,backup_4978 attributed by workflow timing; another case is equally close
+case_09,account_3960 attributed by workflow timing; another case is equally close
+case_13,support_4218 attributed by workflow timing; another case is equally close
+case_13,search_1308 attributed by workflow timing; another case is equally close
+case_13,account_9335 attributed by workflow timing; another case is equally close
+case_14,backup_3870 attributed by workflow timing; another case is equally close
+case_14,account_3677 attributed by workflow timing; another case is equally close
+case_15,data_flow_9846 attributed by workflow timing; another case is equally close
+case_15,account_4745 attributed by workflow timing; another case is equally close
+case_16,account_994 attributed by workflow timing; another case is equally close
+case_17,backup_3245 attributed by workflow timing; another case is equally close
+case_17,account_4092 attributed by workflow timing; another case is equally close
+case_17,tombstone_17: evidence only from case_46's earlier episode; not re-reported
+case_18,support_5569 attributed by workflow timing; another case is equally close
+case_18,account_5037 attributed by workflow timing; another case is equally close
+case_19,support_9553 attributed by workflow timing; another case is equally close
+case_19,account_9102 attributed by workflow timing; another case is equally close
+case_20,analytics_2265 attributed by workflow timing; another case is equally close
+case_20,data_flow_1770 attributed by workflow timing; another case is equally close
+case_20,account_5521 attributed by workflow timing; another case is equally close
+case_21,analytics_5335 attributed by workflow timing; another case is equally close
+case_21,account_6440 attributed by workflow timing; another case is equally close
+case_22,analytics_4440 attributed by workflow timing; another case is equally close
+case_22,account_4990 attributed by workflow timing; another case is equally close
+case_23,export_7364 attributed by workflow timing; another case is equally close
+case_23,search_898 attributed by workflow timing; another case is equally close
+case_23,account_9155 attributed by workflow timing; another case is equally close
+case_24,analytics_4566 attributed by workflow timing; another case is equally close
+case_24,account_5334 attributed by workflow timing; another case is equally close
+case_25,llm risk: decision_delegated
+case_25,analytics_1895 attributed by workflow timing; another case is equally close
+case_25,account_7225 attributed by workflow timing; another case is equally close
+case_26,rules=ERASURE haiku=AMBIGUOUS sonnet=ERASURE
+case_26,llm risk: decision_delegated
+case_26,backup_3120 attributed by workflow timing; another case is equally close
+case_26,data_flow_6244 attributed by workflow timing; another case is equally close
+case_26,support_4715 attributed by workflow timing; another case is equally close
+case_26,account_5684 attributed by workflow timing; another case is equally close
+case_27,rules=ERASURE haiku=AMBIGUOUS sonnet=ERASURE
+case_27,backup_5970 attributed by workflow timing; another case is equally close
+case_27,data_flow_2295 attributed by workflow timing; another case is equally close
+case_27,support_4707 attributed by workflow timing; another case is equally close
+case_27,analytics_6077 attributed by workflow timing; another case is equally close
+case_27,account_3866 attributed by workflow timing; another case is equally close
+case_28,rules=ERASURE haiku=NON_ERASURE sonnet=ERASURE
+case_28,backup_838 attributed by workflow timing; another case is equally close
+case_28,data_flow_2337 attributed by workflow timing; another case is equally close
+case_28,support_2351 attributed by workflow timing; another case is equally close
+case_28,analytics_4574 attributed by workflow timing; another case is equally close
+case_28,account_5482 attributed by workflow timing; another case is equally close
+case_29,data_flow_3827 attributed by workflow timing; another case is equally close
+case_29,account_7012 attributed by workflow timing; another case is equally close
+case_31,tombstone_440 attributed by workflow timing; another case is equally close
+case_31,account_8858 attributed by workflow timing; another case is equally close
+case_32,account_4857 attributed by workflow timing; another case is equally close

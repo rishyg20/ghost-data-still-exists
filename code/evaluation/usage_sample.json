@@ -1,0 +1,48 @@
+{
+  "models": {
+    "claude-sonnet-5-5": {
+      "live_calls": 0,
+      "cached_calls": 18,
+      "input_tokens": 69777,
+      "output_tokens": 11140,
+      "live_input_tokens": 0,
+      "live_output_tokens": 0,
+      "by_purpose": {
+        "vision_evidence_04": 1,
+        "vision_evidence_09": 1,
+        "vision_evidence_14": 1,
+        "vision_evidence_18": 1,
+        "vision_evidence_19": 1,
+        "vision_evidence_23": 1,
+        "vision_evidence_27": 1,
+        "vision_evidence_28": 1,
+        "vision_evidence_32": 1,
+        "vision_evidence_37": 1,
+        "vision_evidence_42": 1,
+        "vision_evidence_46": 1,
+        "vision_evidence_55": 1,
+        "vision_evidence_58": 1,
+        "vision_evidence_60": 1,
+        "intent": 3
+      },
+      "cost_usd": 0.250954,
+      "live_cost_usd": 0.0
+    },
+    "claude-haiku-5-5": {
+      "live_calls": 0,
+      "cached_calls": 398,
+      "input_tokens": 277065,
+      "output_tokens": 34402,
+      "live_input_tokens": 0,
+      "live_output_tokens": 0,
+      "by_purpose": {
+        "intent": 398
+      },
+      "cost_usd": 0.0449075,
+      "live_cost_usd": 0.0
+    }
+  },
+  "llm_enabled": false,
+  "failures": [],
+  "failure_count": 0
+}

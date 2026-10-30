@@ -1,0 +1,2 @@
+cases=32  status_acc=1.000  step P/R/F1=0.932/0.927/0.930  sequence_acc=0.562
+field accuracy (positional): phase=0.974  system_id=0.933  resource_id=0.882  operation=0.933  state=0.933  evidence_id=0.959
