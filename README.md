@@ -1,6 +1,6 @@
 # Ghost Data Still Exists: a deletion-audit agent
 
-My submission to **HackerRank Orchestrate (October 2026)**, my first hackathon. I finished at rank **375 of 4,090** (top 10%).
+My submission to **HackerRank Orchestrate (October 2026)**, my first hackathon. I finished at rank **375 of 4,094** (top 10%).
 
 When a company says "your data has been deleted", is it really gone? For each of 518 deletion requests, this agent works through six steps:
 
