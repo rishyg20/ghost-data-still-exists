@@ -148,6 +148,10 @@ I prepared clear explanations. The interviewer asked how the system fails: "What
 - **Safety by design.** Customer text can never change the policy, a wrong deletion counts as the worst error, and uncertainty is visible in a review queue.
 - **A fresh-eyes review by a subagent.** Once the agent worked end to end, I had Claude Code spawn a separate subagent to review the code. It ran in its own context, with only the problem statement and the evaluation criteria, so it wasn't biased by the hours of conversation behind the code. I gave it a fixed checklist: secrets handling, whether any answer could come from model memory instead of evidence, escalation of high-risk requests, schema validation and retries, and anything the README claimed that the code didn't do. It found two high-severity and six medium-severity issues I'd missed. I decided which to fix and re-ran the evaluation after each fix, rather than applying everything blindly.
 
+## The architect still matters most
+
+AI tools can now write most of the code, but they don't own the result. Whoever builds the system is still the architect: they understand the problem, decide where the model reasons and where code checks it, and validate the output case by case instead of treating the AI as a black box. That holds whatever model you use. A stronger model gives better drafts, not better judgement about what to build. The design principles you start from matter more than the model you pick.
+
 ## Lessons
 
 1. **Read the brief as a scoring rubric.** "AI-powered agent", "retrieval" and "multimodal" tell you what the judges score.
