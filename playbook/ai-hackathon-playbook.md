@@ -67,7 +67,7 @@ This is the decision that matters most. The pattern that scores well on both acc
 | Citations ("does this ID really appear in this file?") | **Code** (verifier) | Rejects confident-but-wrong answers. |
 | Safety gate (injections, high-risk requests) | **Code first**, LLM second | The LLM can make a decision *more* cautious, never less. |
 
-**Anti-pattern to avoid:** "the LLM is non-deterministic, so code decides everything". That gives you reproducibility, but you lose the AI-design points, and the rules overfit the samples. Make runs repeatable with temperature 0, a fixed JSON schema and a reply cache. Don't remove the model to get there.
+**Anti-pattern to avoid:** "the LLM is non-deterministic, so code decides everything". That gives you reproducibility, but you lose the AI-design points, and the rules overfit the samples. Make runs repeatable with fixed prompts, a fixed JSON schema and a reply cache (save each answer and reuse it on re-runs). Don't remove the model to get there.
 
 ### Default stack (adapt it to the problem)
 
@@ -147,7 +147,7 @@ Treat the build like a model validation: nothing is trusted until it's checked a
 - Rows in equals rows out, with no missing or duplicate IDs and exactly the specified columns.
 - Every value comes from the allowed set.
 - Every citation can be traced to a file the system actually read.
-- Run twice and diff the outputs; with temperature 0 and caching they should match.
+- Run twice and diff the outputs; with cached replies they should match.
 - One bad row must not crash the run; failed rows go to the safe default and are logged.
 - Count the API calls and the cost.
 
@@ -204,10 +204,10 @@ Roughly: 15% understanding (reading plus EDA), 7% planning, 45% build and iterat
 | 11–12 | Full run | Run on the real input; read the risky rows yourself |
 | 12–13 | Review | Gates 5 and 6, a fresh-eyes subagent review, a security review |
 | 13–14 | Docs | README and `DECISIONS.md`; one clean run from scratch |
-| 14–14.5 | **Submit** | Leaves a buffer before the deadline |
-| 14.5–15.5 | Interview prep | Pitch, decisions, reverted changes, **attack your own design** |
+| 14–15 | **Submit** | Once only, no resubmissions: re-check everything, but stay inside the deadline |
+| After submitting | Interview prep | Pitch, decisions, reverted changes, **attack your own design** |
 
-A safe submission with hours to spare beats a perfect one in the last five minutes.
+You can usually submit only once, so don't rush it just to finish early. In the October 2026 edition you got about 12 hours after submitting to prepare for the AI interview, so if your weekend allows, take the time to get the submission right and use that window for interview prep, not more building. Check your event's rules: the submission and interview windows can change between editions.
 
 ## 8. Prompting and transcript habits
 
@@ -268,13 +268,14 @@ Answer structure: direct answer → one concrete detail → tie it to the task �
 ## 10. Submission checklist
 
 - [ ] No API keys anywhere in the code. Secrets come only from environment variables.
-- [ ] Pinned `requirements.txt`; fixed seeds and temperature.
+- [ ] Pinned `requirements.txt`; fixed prompts; LLM replies cached so re-runs match.
 - [ ] README: install, environment variables, run command, expected outputs, architecture.
 - [ ] One clean run from scratch reproduces the output file.
 - [ ] The output passes your validator (rows, IDs, columns, allowed values).
 - [ ] The code zip contains only what's asked for: no venv, data folder, nested archives or `.env`.
 - [ ] The transcript log is complete and unedited.
 - [ ] Agent trace (if required): export each session, quit the assistant before copying session files, redact secrets and personal data only, zip it, open it once to check.
+- [ ] You can submit only once: re-check everything above before you click submit.
 - [ ] Check the submission page shows every uploaded file.
 - [ ] Afterwards: push to a **new** GitHub repo, private until submissions close, then public.
 

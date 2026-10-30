@@ -96,10 +96,10 @@ Technically, the problem is not that I used deterministic code. It's *where* I u
 | Who decides | Code, using mappings tuned on the samples | The LLM, reasoning over the policy and evidence |
 | What code does | Everything | Checks every claim: schema, allowed values, time cutoff, "this ID really is in this file", "this rule's condition was evaluated" |
 | On new data | Brittle: a new field name or wording silently fails | Generalises; the checks catch confident-but-wrong answers |
-| Reproducibility | By construction | Temperature 0, a fixed schema and a reply cache give the same answer every run |
+| Reproducibility | By construction | A fixed reply format and saved (cached) replies give the same answer every run |
 | What judges see | A rules engine with AI on the side | An agent with guardrails |
 
-From what I saw in discussions after the event, I wasn't alone, and many people were further along that path than I was. A lot of participants had no LLM layer at all: no API calls inside the agent, just deterministic code written with an assistant. Others relied on free-tier models. Both can produce reasonable output on the common cases, but they tend to break on the edge cases this problem was full of: other languages, ambiguous wording, screenshots and PDFs. They also lose points on design, because the brief asked for an AI-powered agent. Determinism is a property of *how you run* a system: fixed prompts, temperature 0, caching and validation. It isn't a reason to take the model out of the decision.
+From what I saw in discussions after the event, I wasn't alone, and many people were further along that path than I was. A lot of participants had no LLM layer at all: no API calls inside the agent, just deterministic code written with an assistant. Others relied on free-tier models. Both can produce reasonable output on the common cases, but they tend to break on the edge cases this problem was full of: other languages, ambiguous wording, screenshots and PDFs. They also lose points on design, because the brief asked for an AI-powered agent. Getting the same answer every run comes from *how you run* the model: fixed prompts, a fixed reply format, saved replies and validation. It isn't a reason to take the model out of the decision.
 
 It also didn't need a multi-agent framework. One pipeline with a few LLM calls, plus a separate subagent for review, was enough. More agents would have added cost, latency and non-determinism without adding accuracy.
 
