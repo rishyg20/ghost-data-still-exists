@@ -179,6 +179,16 @@ Treat the build like a model validation: nothing is trusted until it's checked a
 
 **Sign-off:** list known limitations and what you didn't test, honestly. That's your answer to "where does it break?"
 
+### Fresh-eyes subagent review
+
+Run it twice: once when the agent works end to end, and once before submitting. Not on every commit; each review uses a lot of your limit. A subagent runs in its own context, so it isn't biased by the main session's history, and only its findings come back.
+
+> Spawn a subagent to review `code/` with fresh eyes. Give it the problem statement and the evaluation criteria. Check: (1) secrets and env handling, (2) grounding: can any answer come from model memory instead of the evidence? (3) escalation of high-risk inputs, (4) schema validation and retries, (5) anything the README claims that the code doesn't do, (6) every hard-coded value and the assumption behind it. Rank findings by severity. Don't change any code.
+
+- Confirm it actually ran as a separate agent, and that its turns appear in the log if the rules require that.
+- **You** decide which findings to fix, and tell the main agent why. Re-run the eval after each fix.
+- A clean code review isn't accuracy: only the eval score tells you the agent works.
+
 ## 7. Time plan (24-hour event, about 15 working hours)
 
 Roughly: 15% understanding (reading plus EDA), 7% planning, 45% build and iterate, 15% review and QC, 10% docs and submission, 8% interview prep.

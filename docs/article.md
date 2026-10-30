@@ -99,7 +99,9 @@ Technically, the problem is not that I used deterministic code. It's *where* I u
 | Reproducibility | By construction | Temperature 0, a fixed schema and a reply cache give the same answer every run |
 | What judges see | A rules engine with AI on the side | An agent with guardrails |
 
-From what I saw in discussions after the event, I wasn't alone. Many participants built fully deterministic pipelines, and those tended to score well on output but lose points on design. Determinism is a property of *how you run* a system: fixed prompts, temperature 0, caching and validation. It isn't a reason to take the model out of the decision.
+From what I saw in discussions after the event, I wasn't alone, and many people were further along that path than I was. A lot of participants had no LLM layer at all: no API calls inside the agent, just deterministic code written with an assistant. Others relied on free-tier models. Both can produce reasonable output on the common cases, but they tend to break on the edge cases this problem was full of: other languages, ambiguous wording, screenshots and PDFs. They also lose points on design, because the brief asked for an AI-powered agent. Determinism is a property of *how you run* a system: fixed prompts, temperature 0, caching and validation. It isn't a reason to take the model out of the decision.
+
+It also didn't need a multi-agent framework. One pipeline with a few LLM calls, plus a separate subagent for review, was enough. More agents would have added cost, latency and non-determinism without adding accuracy.
 
 ### 2. Hard-coded values I didn't review
 
@@ -144,7 +146,7 @@ I prepared clear explanations. The interviewer asked how the system fails: "What
 - **Reading the problem and the data myself before prompting.** That old-school hands-on work is what let me judge the assistant's answers.
 - **Baseline first, measure every change.** One "fix" briefly lowered accuracy, and I only knew because I measured.
 - **Safety by design.** Customer text can never change the policy, a wrong deletion counts as the worst error, and uncertainty is visible in a review queue.
-- **A fresh-eyes review.** An independent subagent review found two high-severity and six medium-severity issues I'd missed.
+- **A fresh-eyes review by a subagent.** Once the agent worked end to end, I had Claude Code spawn a separate subagent to review the code. It ran in its own context, with only the problem statement and the evaluation criteria, so it wasn't biased by the hours of conversation behind the code. I gave it a fixed checklist: secrets handling, whether any answer could come from model memory instead of evidence, escalation of high-risk requests, schema validation and retries, and anything the README claimed that the code didn't do. It found two high-severity and six medium-severity issues I'd missed. I decided which to fix and re-ran the evaluation after each fix, rather than applying everything blindly.
 
 ## Lessons
 

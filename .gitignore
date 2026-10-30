@@ -1,0 +1,24 @@
+# secrets
+.env
+.env.*
+
+# challenge data (get it from the official starter repo)
+dataset/
+
+# run outputs written to the repo root
+/output.csv
+/output_v0_rules.csv
+/review_queue.csv
+/review_queue_rules.csv
+/customer_messages.csv
+code.zip
+
+# LLM reply cache
+code/cache/
+
+# Python / OS
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
